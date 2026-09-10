@@ -4,6 +4,35 @@ Welcome to the ultimate payment method logos repo! 🎉 We curated an extensive 
 
 While this repo holds the icons we use across our solutions, you may use them to enhance your projects too!
 
+## Using this fork as a package
+
+This fork wraps the assets as importable strings and adds a `assets/zp/` set of
+Zenith-branded variants. It is published as a tarball on the Zenith CDN, not to
+npm or GitHub Packages — consumers pin the URL directly:
+
+```json
+"@ianmenethil/payment-logos": "https://cdn.zenithpayments.support/zp-shared/payment-logos-0.0.1.tgz"
+```
+
+```ts
+import { visa, zpUnionpay } from '@ianmenethil/payment-logos';
+```
+
+Every export is the raw SVG markup as a string, named from its filename in
+camelCase; assets under `assets/zp/` are prefixed (`zp/visa.svg` -> `zpVisa`).
+`src/index.ts` is generated — run `pnpm run build:index` after adding an asset,
+never edit it by hand.
+
+To publish a new version: bump `version` in `package.json`, then
+
+```sh
+pnpm run publish:cdn
+```
+
+which builds, packs, copies the tarball into the sibling `ZP-CDN-Server`
+checkout at `public/zp-shared/`, commits, pushes, deploys the CDN Worker, and
+fails unless the new URL returns HTTP 200.
+
 Shortcuts to individual sections:
 
 - [Debit & credit cards](#debit--credit-cards)
