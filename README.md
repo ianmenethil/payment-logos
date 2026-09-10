@@ -71,10 +71,12 @@ Shortcuts to individual sections:
 | ![cembrapay](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/cembrapay.svg?sanitize=true) | assets/apm/cembrapay.svg |
 | ![crif](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/crif.svg?sanitize=true) | assets/apm/crif.svg |
 | ![crypto](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/crypto.svg?sanitize=true) | assets/apm/crypto.svg |
+| ![dimoco](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/dimoco.svg?sanitize=true) | assets/apm/dimoco.svg |
 | ![ebill](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/ebill.svg?sanitize=true) | assets/apm/ebill.svg |
 | ![eps](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/eps.svg?sanitize=true) | assets/apm/eps.svg |
 | ![giropay](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/giropay.svg?sanitize=true) | assets/apm/giropay.svg |
 | ![half-fare-plus](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/half-fare-plus.svg?sanitize=true) | assets/apm/half-fare-plus.svg |
+| ![ideal-wero](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/ideal-wero.svg?sanitize=true) | assets/apm/ideal-wero.svg |
 | ![ideal](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/ideal.svg?sanitize=true) | assets/apm/ideal.svg |
 | ![klarna](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/klarna.svg?sanitize=true) | assets/apm/klarna.svg |
 | ![lunch-check](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/lunch-check.svg?sanitize=true) | assets/apm/lunch-check.svg |
@@ -82,6 +84,7 @@ Shortcuts to individual sections:
 | ![migros-giftcard](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/migros-giftcard.svg?sanitize=true) | assets/apm/migros-giftcard.svg |
 | ![mobilepay](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/mobilepay.svg?sanitize=true) | assets/apm/mobilepay.svg |
 | ![paycard](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/paycard.svg?sanitize=true) | assets/apm/paycard.svg |
+| ![paypal-alt](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/paypal-alt.svg?sanitize=true) | assets/apm/paypal-alt.svg |
 | ![paypal](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/paypal.svg?sanitize=true) | assets/apm/paypal.svg |
 | ![paysafecard](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/paysafecard.svg?sanitize=true) | assets/apm/paysafecard.svg |
 | ![pointspay](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/pointspay.svg?sanitize=true) | assets/apm/pointspay.svg |
@@ -95,9 +98,9 @@ Shortcuts to individual sections:
 | ![sepa](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/sepa.svg?sanitize=true) | assets/apm/sepa.svg |
 | ![skrill](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/skrill.svg?sanitize=true) | assets/apm/skrill.svg |
 | ![swish](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/swish.svg?sanitize=true) | assets/apm/swish.svg |
-| ![swissbilling](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/swissbilling.svg?sanitize=true) | assets/apm/swissbilling.svg |
 | ![swisscom-pay](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/swisscom-pay.svg?sanitize=true) | assets/apm/swisscom-pay.svg |
 | ![swisspass](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/swisspass.svg?sanitize=true) | assets/apm/swisspass.svg |
 | ![twint](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/twint.svg?sanitize=true) | assets/apm/twint.svg |
 | ![vipps](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/vipps.svg?sanitize=true) | assets/apm/vipps.svg |
 | ![wechat-pay](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/wechat-pay.svg?sanitize=true) | assets/apm/wechat-pay.svg |
+| ![wero](https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/wero.svg?sanitize=true) | assets/apm/wero.svg |
