@@ -1,0 +1,7 @@
+<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="40" rx="6" fill="#00509E"/>
+  <path d="M25 13h15a3 3 0 013 3v8a3 3 0 01-3 3H25a3 3 0 01-3-3v-8a3 3 0 013-3z" fill="white"/>
+  <path d="M28 18h9M28 20h9M28 22h6" stroke="#00509E" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="38" cy="20" r="2" fill="#00509E"/>
+  <text x="50" y="26" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white">PayTo</text>
+</svg>

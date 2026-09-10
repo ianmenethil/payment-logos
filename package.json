@@ -1,0 +1,50 @@
+{
+  "name": "@ianmenethil/payment-logos",
+  "version": "1.1.0",
+  "description": "Payment method SVG logos — cards, wallets, APMs as importable strings",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "assets",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build:index": "node scripts/build-index.mjs",
+    "build": "npm run build:index && tsup src/index.ts --format esm,cjs --dts --clean",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "payment",
+    "logos",
+    "svg",
+    "icons",
+    "mastercard",
+    "visa",
+    "paypal",
+    "apple-pay",
+    "google-pay"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianmenethil/payment-logos.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
