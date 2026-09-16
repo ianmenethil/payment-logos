@@ -1,6 +1,6 @@
 {
   "name": "@ianmenethil/payment-logos",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Payment method SVG logos — cards, wallets, APMs as importable strings",
   "type": "module",
   "main": "./dist/index.cjs",

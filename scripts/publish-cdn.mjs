@@ -91,16 +91,25 @@ function deployCdn(repoRoot) {
   });
 
   const liveUrl = `https://cdn.zenithpayments.support/zp-shared/${tarballName}`;
-  const response = execFileSync("curl", ["-sI", liveUrl], {
-    encoding: "utf8",
-  });
-  const statusLine = response.split("\n")[0]?.trim() ?? "";
-  if (!statusLine.includes("200")) {
-    throw new Error(
-      `CDN deploy finished but ${liveUrl} did not return HTTP 200:\n${statusLine}`
-    );
+
+  // The edge can serve a 404 for a second or two after deploy returns, so poll
+  // rather than judging the deploy on a single immediate request.
+  let statusLine = "";
+  for (let attempt = 1; attempt <= 10; attempt += 1) {
+    statusLine =
+      execFileSync("curl", ["-sI", liveUrl], { encoding: "utf8" })
+        .split("\n")[0]
+        ?.trim() ?? "";
+    if (statusLine.includes("200")) {
+      console.log(`Live: ${liveUrl} (${statusLine})`);
+      return;
+    }
+    execFileSync("sleep", ["2"]);
   }
-  console.log(`Live: ${liveUrl} (${statusLine})`);
+
+  throw new Error(
+    `CDN deploy finished but ${liveUrl} did not return HTTP 200 within 20s:\n${statusLine}`
+  );
 }
 
 if (!existsSync(cdnRoot)) {

@@ -1,8 +1,9 @@
 /**
- * Reads all SVG files from assets/ and generates src/index.ts
- * with named exports for each logo (kebab-case → camelCase).
+ * Reads every SVG and PNG under assets/ and generates src/index.ts with a named
+ * string export per logo (kebab-case → camelCase). SVGs export their markup;
+ * PNGs export a data URI.
  *
- * Run: node scripts/build-index.mjs
+ * Run: pnpm run build:index
  */
 
 import fs from 'fs'
@@ -37,26 +38,39 @@ for (const category of categories) {
   const dir = path.join(assetsDir, category)
   if (!fs.existsSync(dir)) continue
 
-  const files = fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith('.svg'))
-    .sort()
+  const entries = fs.readdirSync(dir).sort()
+  const svgNames = new Set(
+    entries.filter((f) => f.endsWith('.svg')).map((f) => path.basename(f, '.svg'))
+  )
+  const files = entries.filter((f) => f.endsWith('.svg') || f.endsWith('.png'))
 
   lines.push(`// ── ${category.toUpperCase()} ${'─'.repeat(50 - category.length)}`)
 
   for (const file of files) {
-    const name = path.basename(file, '.svg')
+    const ext = path.extname(file)
+    const name = path.basename(file, ext)
+
+    // An SVG and a PNG of the same name would generate the same export; the SVG wins.
+    if (ext === '.png' && svgNames.has(name)) continue
+
     const base = toCamelCase(name)
     const exportName = prefixedCategories.has(category)
       ? toCamelCase(category) + base.charAt(0).toUpperCase() + base.slice(1)
       : base
-    const svgRaw = fs.readFileSync(path.join(dir, file), 'utf-8').trim()
 
-    // Escape backticks and template literal $ signs inside the SVG
-    const escaped = svgRaw.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$\{/g, '\\${')
+    let value
+    if (ext === '.png') {
+      // PNGs cannot be inlined as markup, so they ship as data URIs instead.
+      const b64 = fs.readFileSync(path.join(dir, file)).toString('base64')
+      value = `data:image/png;base64,${b64}`
+    } else {
+      const svgRaw = fs.readFileSync(path.join(dir, file), 'utf-8').trim()
+      // Escape backticks and template literal $ signs inside the SVG
+      value = svgRaw.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$\{/g, '\\${')
+    }
 
-    lines.push(`/** \`assets/${category}/${name}.svg\` */`)
-    lines.push(`export const ${exportName}: string = \`${escaped}\``)
+    lines.push(`/** \`assets/${category}/${name}${ext}\` */`)
+    lines.push(`export const ${exportName}: string = \`${value}\``)
     lines.push('')
     count++
   }

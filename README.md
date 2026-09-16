@@ -11,17 +11,18 @@ Zenith-branded variants. It is published as a tarball on the Zenith CDN, not to
 npm or GitHub Packages — consumers pin the URL directly:
 
 ```json
-"@ianmenethil/payment-logos": "https://cdn.zenithpayments.support/zp-shared/payment-logos-0.0.1.tgz"
+"@ianmenethil/payment-logos": "https://cdn.zenithpayments.support/zp-shared/payment-logos-0.0.4.tgz"
 ```
 
 ```ts
 import { visa, zpUnionpay } from '@ianmenethil/payment-logos';
 ```
 
-Every export is the raw SVG markup as a string, named from its filename in
-camelCase; assets under `assets/zp/` are prefixed (`zp/visa.svg` -> `zpVisa`).
-`src/index.ts` is generated — run `pnpm run build:index` after adding an asset,
-never edit it by hand.
+Every export is a string named from its filename in camelCase; assets under
+`assets/zp/` are prefixed (`zp/visa.svg` -> `zpVisa`). An SVG exports its raw
+markup, a PNG exports a `data:image/png;base64,...` URI, and where both exist
+under one name the SVG wins. `src/index.ts` is generated — run
+`pnpm run build:index` after adding an asset, never edit it by hand.
 
 To publish a new version: bump `version` in `package.json`, then
 
