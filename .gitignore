@@ -2,3 +2,5 @@
 node_modules/
 dist/
 *.tgz
+assets/zp/card-tokenize-light.png.bak
+assets/zp/card-oneoff-light.png.bak
