@@ -11,7 +11,7 @@ Zenith-branded variants. It is published as a tarball on the Zenith CDN, not to
 npm or GitHub Packages — consumers pin the URL directly:
 
 ```json
-"@ianmenethil/payment-logos": "https://cdn.zenithpayments.support/zp-shared/payment-logos-0.0.8.tgz"
+"@ianmenethil/payment-logos": "https://cdn.zenithpayments.support/zp-shared/payment-logos-0.0.9.tgz"
 ```
 
 ```ts
